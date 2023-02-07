@@ -8,7 +8,7 @@ body {
 
 #main {
   width: 700px;
-  height: 500px;
+  height: 600px;
   margin: 0px auto;
   display: grid;
   grid-template-rows: 2fr 1fr 2fr;
@@ -38,7 +38,7 @@ h1 {
 }
 
 .label {
-  font-size: 40px;
+  /*font-size: 40px;*/
   grid-column: 1 / 4;
 }
 
@@ -73,4 +73,51 @@ i {
 
 .red {
   color: #AD3527;
+}
+
+@media screen and (max-width:720px) {
+  #main {
+    width: 500px;
+    height: 430px;
+  }
+
+  h1 {
+    font-size: 70px;
+    margin: 20px 0px;
+  }
+
+  .length-adjust p {
+    margin: 10px 0px;
+    font-size: 21px;
+  }
+
+  #timer-label, #start_stop, #reset {
+    font-size: 35px;
+  }
+
+  #time-left {
+    font-size: 63px;
+  }
+
+  #break-decrement, #break-increment, #session-decrement, #session-increment {
+    font-size: 22px;
+  }
+
+}
+
+@media screen and (max-width:520px) {
+  #main {
+    width:375px;
+    height:650px;
+  }
+
+  .length-adjust {
+    grid-column: 1 / 3;
+    margin: 15px;
+  }
+
+  h1 {
+    margin: 20px;
+    text-align: center;
+  }
 }
