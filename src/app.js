@@ -193,6 +193,8 @@ class App extends React.Component {
 
     // Timer button function
     timerClick = () => {
+        document.getElementById("beep").play();
+        document.getElementById("beep").pause();
         // Check running state of timer, set current state and trigger timer functions based on that
         if (this.state.running == "initialized") {
             this.setState(

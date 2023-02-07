@@ -196,6 +196,8 @@ var App = /*#__PURE__*/function (_React$Component) {
       });
     };
     _this.timerClick = function () {
+      document.getElementById("beep").play();
+      document.getElementById("beep").pause();
       // Check running state of timer, set current state and trigger timer functions based on that
       if (_this.state.running == "initialized") {
         _this.setState({
