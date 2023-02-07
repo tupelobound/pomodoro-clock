@@ -230,7 +230,7 @@ class App extends React.Component {
                     color={this.state.color}
                     mode={this.state.timerMode}
                 />
-                <audio id="beep" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav" />
+                <audio id="beep" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav" autoplay />
             </div>
         );
     }
