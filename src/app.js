@@ -273,6 +273,4 @@ const Timer = props => {
 };
 
 // Render the app to the DOM
-const rootNode = document.getElementById('app');
-const root = ReactDOM.createRoot(rootNode);
-root.render(React.createElement(App));
+ReactDOM.render(<App />, document.getElementById("app"));

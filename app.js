@@ -322,6 +322,4 @@ var Timer = function Timer(props) {
 };
 
 // Render the app to the DOM
-var rootNode = document.getElementById('app');
-var root = ReactDOM.createRoot(rootNode);
-root.render(React.createElement(App));
+ReactDOM.render( /*#__PURE__*/React.createElement(App, null), document.getElementById("app"));
