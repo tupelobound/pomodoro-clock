@@ -1,5 +1,6 @@
 import './App.css'
 import Break from './Break'
+import Session from './Session'
 import { useState } from 'react'
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
     <div id="main">
       <h1>Pomodoro Clock</h1>
       <Break length={state.breakLength} click={handleClick} />
+      <Session length={state.sessionLength} click={handleClick} />
     </div>
   )
 }
