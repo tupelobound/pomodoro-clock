@@ -1,6 +1,7 @@
 import './App.css'
 import Break from './Break'
 import Session from './Session'
+import Timer from './Timer'
 import { useState } from 'react'
 
 function App() {
@@ -23,8 +24,23 @@ function App() {
   return (
     <div id="main">
       <h1>Pomodoro Clock</h1>
-      <Break length={state.breakLength} click={handleClick} />
-      <Session length={state.sessionLength} click={handleClick} />
+      <Break
+        length={state.breakLength}
+        click={handleClick}
+      />
+      <Session
+        length={state.sessionLength}
+        click={handleClick}
+      />
+      <Timer
+        minutes={state.timerMinutes}
+        seconds={state.timerSeconds}
+        playPause={handleClick}
+        cancel={handleClick}
+        color={state.color}
+        mode={state.timerMode}
+      />
+      <audio id="beep" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav" />
     </div>
   )
 }
