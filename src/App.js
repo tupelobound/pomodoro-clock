@@ -17,8 +17,30 @@ function App() {
     timerMode: "Session"
   })
 
-  const handleClick = () => {
-    console.log('Testing')
+  const handleClick = (e) => {
+    console.log(e)
+    setState({
+      ...state,
+      breakLength: 34
+    })
+  }
+
+  const decreaseBreak = () => {
+    if (state.breakLength > 1) {
+      setState({
+        ...state,
+        breakLength: state.breakLength - 1
+      })
+    }
+  }
+
+  const increaseBreak = () => {
+    if (state.breakLength < 60) {
+      setState({
+        ...state,
+        breakLength: state.breakLength + 1
+      })
+    }
   }
   
   return (
@@ -26,7 +48,8 @@ function App() {
       <h1>Pomodoro Clock</h1>
       <Break
         length={state.breakLength}
-        click={handleClick}
+        increase={increaseBreak}
+        decrease={decreaseBreak}
       />
       <Session
         length={state.sessionLength}
