@@ -19,28 +19,33 @@ function App() {
 
   const handleClick = (e) => {
     console.log(e)
+  }
+
+  const handleArrows = (e) => {
+    let key
+    let value
+    if (e.target.id.search('break') === -1) {
+      key = 'sessionLength'
+    } else {
+      key = 'breakLength'
+    }
+    if (e.target.id.search('increment') === -1) {
+      if (state[key] > 1) {
+        value = state[key] - 1
+      } else {
+        value = state[key]
+      }
+    } else {
+      if (state[key] < 60) {
+        value = state[key] + 1
+      } else {
+        value = state[key]
+      }
+    }
     setState({
       ...state,
-      breakLength: 34
+      [key]: value
     })
-  }
-
-  const decreaseBreak = () => {
-    if (state.breakLength > 1) {
-      setState({
-        ...state,
-        breakLength: state.breakLength - 1
-      })
-    }
-  }
-
-  const increaseBreak = () => {
-    if (state.breakLength < 60) {
-      setState({
-        ...state,
-        breakLength: state.breakLength + 1
-      })
-    }
   }
   
   return (
@@ -48,12 +53,11 @@ function App() {
       <h1>Pomodoro Clock</h1>
       <Break
         length={state.breakLength}
-        increase={increaseBreak}
-        decrease={decreaseBreak}
+        click={handleArrows}
       />
       <Session
         length={state.sessionLength}
-        click={handleClick}
+        click={handleArrows}
       />
       <Timer
         minutes={state.timerMinutes}
