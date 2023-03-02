@@ -1,6 +1,4 @@
-// Ensure FCC test suite is set to correct project
-const projectName = "25-5-clock";
-localStorage.setItem("example_project", "25 + 5 Clock");
+import React from 'react'
 
 // Create class to wrap entire app
 class App extends React.Component {
@@ -26,7 +24,7 @@ class App extends React.Component {
 
     // Function to handle click events
     handleClick = event => {
-        if (event.target.id == "reset") { // If reset button is pressed:
+        if (event.target.id === "reset") { // If reset button is pressed:
             clearInterval(this.countdown); // Stop the timer and reset state
             document.getElementById("beep").pause() // Stop alarm
             document.getElementById("beep").currentTime = 0; // Reset alarm
@@ -40,7 +38,7 @@ class App extends React.Component {
                 color: "white",
                 timerMode: "Session"
             });
-        } else if (this.state.running != "running") { // only allow increment and decrement arrows to function when timer isn't running
+        } else if (this.state.running !== "running") { // only allow increment and decrement arrows to function when timer isn't running
             // Declare variables for holding values temporarily before setting app state
             let temp = 0;
             let temp2 = "00";
@@ -49,7 +47,7 @@ class App extends React.Component {
                 case "break-increment": // Increment the break time up to a maximum of 60
                     if (this.state.breakLength < 60) {
                         temp = this.state.breakLength + 1;
-                        if (temp.toString().length == 1) { // Convert single digits into two digit strings
+                        if (temp.toString().length === 1) { // Convert single digits into two digit strings
                             temp2 = "0" + temp.toString();
                         } else {
                             temp2 = temp.toString();
@@ -57,7 +55,7 @@ class App extends React.Component {
                         this.setState({
                             breakLength: temp
                         });
-                        if (this.state.timerMode == "Break") {
+                        if (this.state.timerMode === "Break") {
                             this.setState({
                                 timerMinutes: temp2,
                                 timerSeconds: "00",
@@ -69,7 +67,7 @@ class App extends React.Component {
                 case "break-decrement": // Decrement the break time down to a minimum of 1
                     if (this.state.breakLength > 1) {
                         temp = this.state.breakLength - 1;
-                        if (temp.toString().length == 1) { // Convert single digits into two digit strings
+                        if (temp.toString().length === 1) { // Convert single digits into two digit strings
                             temp2 = "0" + temp.toString();
                         } else {
                             temp2 = temp.toString();
@@ -77,7 +75,7 @@ class App extends React.Component {
                         this.setState({
                             breakLength: temp
                         });
-                        if (this.state.timerMode == "Break") {
+                        if (this.state.timerMode === "Break") {
                             this.setState({
                                 timerMinutes: temp2,
                                 timerSeconds: "00",
@@ -89,7 +87,7 @@ class App extends React.Component {
                 case "session-increment": // Increment the session time up to a maximum of 60
                     if (this.state.sessionLength < 60) {
                         temp = this.state.sessionLength + 1;
-                        if (temp.toString().length == 1) { // Convert single digits into two digit strings
+                        if (temp.toString().length === 1) { // Convert single digits into two digit strings
                             temp2 = "0" + temp.toString();
                         } else {
                             temp2 = temp.toString();
@@ -98,7 +96,7 @@ class App extends React.Component {
                             sessionLength: temp,
                             timerTotalSeconds: temp * 60
                         });
-                        if (this.state.timerMode == "Session") {
+                        if (this.state.timerMode === "Session") {
                             this.setState({
                                 timerMinutes: temp2,
                                 timerSeconds: "00"
@@ -109,7 +107,7 @@ class App extends React.Component {
                 case "session-decrement": // Decrement the session time down to a minimum of 1
                     if (this.state.sessionLength > 1) {
                         temp = this.state.sessionLength - 1;
-                        if (temp.toString().length == 1) { // Convert single digits into two digit strings
+                        if (temp.toString().length === 1) { // Convert single digits into two digit strings
                             temp2 = "0" + temp.toString();
                         } else {
                             temp2 = temp.toString();
@@ -118,7 +116,7 @@ class App extends React.Component {
                             sessionLength: temp,
                             timerTotalSeconds: temp * 60
                         });
-                        if (this.state.timerMode == "Session") {
+                        if (this.state.timerMode === "Session") {
                             this.setState({
                                 timerMinutes: temp2,
                                 timerSeconds: "00"
@@ -126,6 +124,7 @@ class App extends React.Component {
                         }
                     }
                     break;
+                  default:
             }
         }
     };
@@ -138,7 +137,7 @@ class App extends React.Component {
         // set off alarm
         document.getElementById("beep").play();
 
-        if (this.state.timerMode == "Session") { // Check timer mode and toggle states
+        if (this.state.timerMode === "Session") { // Check timer mode and toggle states
             temp = this.state.breakLength;
             this.setState(
                 {
@@ -160,7 +159,7 @@ class App extends React.Component {
     // Timer function
     timerDecrement = () => {
         let gap = this.state.timerTotalSeconds - 1; // set total seconds of timer
-        if (gap == -1) { // if timer has reached zero trigger the function to toggle timer mode
+        if (gap === -1) { // if timer has reached zero trigger the function to toggle timer mode
             this.toggleTimerMode();
             gap = this.state.timerTotalSeconds; // get new total seconds from state
         } else if (gap < 60) { // change color if only one minute remains
@@ -176,10 +175,10 @@ class App extends React.Component {
         let minutes = (Math.floor(gap / 60)).toString();
         let seconds = (gap % 60).toString();
         // convert single digits into double digit strings
-        if (seconds.length == 1) {
+        if (seconds.length === 1) {
             seconds = "0" + seconds;
         }
-        if (minutes.length == 1) {
+        if (minutes.length === 1) {
             minutes = "0" + minutes;
         }
         // pass variables into state
@@ -196,13 +195,13 @@ class App extends React.Component {
         document.getElementById("beep").play();
         document.getElementById("beep").pause();
         // Check running state of timer, set current state and trigger timer functions based on that
-        if (this.state.running == "initialized") {
+        if (this.state.running === "initialized") {
             this.setState(
                 {
                     running: "running"
                 });
             this.countdown = setInterval(this.timerDecrement, 1000);
-        } else if (this.state.running == "running") {
+        } else if (this.state.running === "running") {
             this.setState(
                 {
                     running: "paused"
@@ -274,5 +273,4 @@ const Timer = props => {
     );
 };
 
-// Render the app to the DOM
-ReactDOM.render(<App />, document.getElementById("app"));
+export default App
