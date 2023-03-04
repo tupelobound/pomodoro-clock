@@ -15,6 +15,10 @@ h1 {
   margin: 30px 0;
 }
 
+i {
+  cursor: pointer;
+}
+
 .length-adjust {
   width: 250px;
   display: grid;
@@ -54,10 +58,6 @@ h1 {
   margin: 0;
 }
 
-i {
-  cursor: pointer;
-}
-
 .white {
   color: white;
 }
@@ -82,7 +82,9 @@ i {
     font-size: 21px;
   }
 
-  #timer-label, #start_stop, #reset {
+  #timer-label,
+  #start_stop,
+  #reset {
     font-size: 35px;
   }
 
@@ -90,16 +92,18 @@ i {
     font-size: 63px;
   }
 
-  #break-decrement, #break-increment, #session-decrement, #session-increment {
+  #break-decrement,
+  #break-increment,
+  #session-decrement,
+  #session-increment {
     font-size: 22px;
   }
-
 }
 
 @media screen and (max-width: 520px) {
   #main {
-    width:375px;
-    height:650px;
+    width: 375px;
+    height: 650px;
   }
 
   .length-adjust {
