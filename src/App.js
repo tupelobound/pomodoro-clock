@@ -10,8 +10,8 @@ function App () {
   return (
     <div id='main'>
       <h1>Pomodoro Clock</h1>
-      <LengthSetter name="Break" length={breakLength} setLength ={setBreakLength} />
-      <LengthSetter name="Session" length={sessionLength} setLength={setSessionLength} />
+      <LengthSetter name="break" length={breakLength} setLength ={setBreakLength} />
+      <LengthSetter name="session" length={sessionLength} setLength={setSessionLength} />
     </div>
   )
 }
