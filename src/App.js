@@ -3,6 +3,7 @@ import { React, useState } from 'react'
 import LengthSetter from './LengthSetter'
 import Timer from './Timer'
 import CancelButton from './CancelButton'
+import PlayButton from './PlayButton'
 
 function App () {
   // set initial states
@@ -32,6 +33,7 @@ function App () {
         color={color}
         timerMode={timerMode}
       />
+      <PlayButton />
       <CancelButton
         setBreakLength={setBreakLength}
         setSessionLength={setSessionLength}
