@@ -4,7 +4,11 @@ import PropTypes from 'prop-types'
 // Functional component for setting the break length
 const LengthSetter = ({ name, length, setLength }) => {
   const handleClick = (e) => {
-    setLength(60)
+    if (e.target.id.search('increment') === -1) {
+      if (length > 1) setLength(length - 1)
+    } else {
+      if (length < 60) setLength(length + 1)
+    }
   }
 
   return (
