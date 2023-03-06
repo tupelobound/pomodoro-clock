@@ -9,10 +9,10 @@ const LengthSetter = ({ name, length, setLength }) => {
 
   return (
         <div className="length-adjust">
-            <p id="break-label" className="label">{name}</p>
-            <i id="break-decrement" className="fas fa-arrow-down fa-2x" onClick={handleClick} />
-            <p id="break-length">{length}</p>
-            <i id="break-increment" className="fas fa-arrow-up fa-2x" onClick={handleClick} />
+            <p id={`${name}-label`} className="label">{`${name.charAt(0).toUpperCase() + name.slice(1)} Length`}</p>
+            <i id={`${name}-decrement`} className="fas fa-arrow-down fa-2x" onClick={handleClick} />
+            <p id={`${name}-length`}>{length}</p>
+            <i id={`${name}-increment`} className="fas fa-arrow-up fa-2x" onClick={handleClick} />
         </div>
   )
 }
