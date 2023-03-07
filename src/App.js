@@ -26,6 +26,7 @@ function App () {
         name="session"
         length={sessionLength}
         setLength={setSessionLength}
+        setTimerMinutes={setTimerMinutes}
       />
       <Timer
         timerMinutes={timerMinutes}
