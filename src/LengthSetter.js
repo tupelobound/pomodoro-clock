@@ -3,14 +3,16 @@ import PropTypes from 'prop-types'
 import './LengthSetter.css'
 
 // Functional component for setting the break length
-const LengthSetter = ({ name, length, setLength, setTimerMinutes }) => {
+const LengthSetter = ({ name, length, setLength, setTimerMinutes, status }) => {
   const handleClick = (e) => {
-    if (e.target.id.search('increment') === -1) {
-      if (name === 'session' && length > 1) setTimerMinutes(length - 1)
-      if (length > 1) setLength(length - 1)
-    } else {
-      if (name === 'session' && length < 60) setTimerMinutes(length + 1)
-      if (length < 60) setLength(length + 1)
+    if (status !== 'running') {
+      if (e.target.id.search('increment') === -1) {
+        if (name === 'session' && length > 1) setTimerMinutes(length - 1)
+        if (length > 1) setLength(length - 1)
+      } else {
+        if (name === 'session' && length < 60) setTimerMinutes(length + 1)
+        if (length < 60) setLength(length + 1)
+      }
     }
   }
 
@@ -28,7 +30,8 @@ LengthSetter.propTypes = {
   name: PropTypes.string.isRequired,
   length: PropTypes.number.isRequired,
   setLength: PropTypes.func.isRequired,
-  setTimerMinutes: PropTypes.func
+  setTimerMinutes: PropTypes.func,
+  status: PropTypes.string
 }
 
 export default LengthSetter
