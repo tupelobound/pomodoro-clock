@@ -1,0 +1,17 @@
+.length-adjust {
+  width: 250px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+  
+.length-adjust p {
+  margin: 10px 0;
+  font-size: 30px;
+}
+  
+.label {
+  grid-column: 1 / 4;
+}
