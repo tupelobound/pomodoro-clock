@@ -2,7 +2,7 @@ import { React, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 // Functional component for the play/pause button
-const PlayButton = ({ status, setStatus, icon, setIcon, timerMinutes, setTimerMinutes }) => {
+const PlayButton = ({ status, setStatus, icon, setIcon, totalSeconds, setTotalSeconds }) => {
   const playPause = (e) => {
     if (status !== 'running') {
       setStatus('running')
@@ -16,7 +16,7 @@ const PlayButton = ({ status, setStatus, icon, setIcon, timerMinutes, setTimerMi
   useEffect(() => {
     if (status === 'running') {
       const interval = setInterval(() => {
-        setTimerMinutes(timerMinutes => timerMinutes - 1)
+        setTotalSeconds(totalSeconds => totalSeconds - 1)
       }, 1000)
       return () => clearInterval(interval)
     }
@@ -34,8 +34,8 @@ PlayButton.propTypes = {
   setStatus: PropTypes.func,
   icon: PropTypes.string,
   setIcon: PropTypes.func,
-  timerMinutes: PropTypes.number,
-  setTimerMinutes: PropTypes.func
+  totalSeconds: PropTypes.number,
+  setTotalSeconds: PropTypes.func
 }
 
 export default PlayButton
