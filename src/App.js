@@ -12,6 +12,8 @@ function App () {
   const [timerSeconds, setTimerSeconds] = useState('00')
   const [timerMode, setTimerMode] = useState('Session')
   const [color, setColor] = useState('white')
+  const [status, setStatus] = useState('initialised')
+  const [icon, setIcon] = useState('fas fa-play fa-3x')
 
   return (
     <div id='main'>
@@ -33,7 +35,14 @@ function App () {
         timerMinutes={timerMinutes}
         timerSeconds={timerSeconds}
       />
-      <PlayButton />
+      <PlayButton
+        status={status}
+        setStatus={setStatus}
+        icon={icon}
+        setIcon={setIcon}
+        timerMinutes={timerMinutes}
+        setTimerMinutes={setTimerMinutes}
+      />
       <CancelButton
         setBreakLength={setBreakLength}
         setSessionLength={setSessionLength}
