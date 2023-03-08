@@ -14,6 +14,7 @@ function App () {
   const [color, setColor] = useState('white')
   const [status, setStatus] = useState('initialised')
   const [icon, setIcon] = useState('fas fa-play fa-3x')
+  const [totalSeconds, setTotalSeconds] = useState(1500)
 
   return (
     <div id='main'>
@@ -22,12 +23,14 @@ function App () {
         name={'break'}
         length={breakLength}
         setLength={setBreakLength}
+        status={status}
       />
       <LengthSetter
         name={'session'}
         length={sessionLength}
         setLength={setSessionLength}
         setTimerMinutes={setTimerMinutes}
+        status={status}
       />
       <Timer
         color={color}
@@ -40,8 +43,8 @@ function App () {
         setStatus={setStatus}
         icon={icon}
         setIcon={setIcon}
-        timerMinutes={timerMinutes}
-        setTimerMinutes={setTimerMinutes}
+        totalSeconds={totalSeconds}
+        setTotalSeconds={setTotalSeconds}
       />
       <CancelButton
         setBreakLength={setBreakLength}
@@ -50,6 +53,8 @@ function App () {
         setTimerSeconds={setTimerSeconds}
         setColor={setColor}
         setTimerMode={setTimerMode}
+        setTotalSeconds={setTotalSeconds}
+        setStatus={setStatus}
       />
 
     </div>
