@@ -8,7 +8,9 @@ const CancelButton = ({
   setTimerMinutes,
   setTimerSeconds,
   setColor,
-  setTimerMode
+  setTimerMode,
+  setTotalSeconds,
+  setStatus
 }) => {
   const cancel = () => {
     setBreakLength(5)
@@ -17,6 +19,8 @@ const CancelButton = ({
     setTimerSeconds('00')
     setColor('white')
     setTimerMode('Session')
+    setTotalSeconds(1500)
+    setStatus('initialised')
   }
   return (
     <>
@@ -31,7 +35,9 @@ CancelButton.propTypes = {
   setTimerMinutes: PropTypes.func.isRequired,
   setTimerSeconds: PropTypes.func.isRequired,
   setColor: PropTypes.func.isRequired,
-  setTimerMode: PropTypes.func.isRequired
+  setTimerMode: PropTypes.func.isRequired,
+  setTotalSeconds: PropTypes.func.isRequired,
+  setStatus: PropTypes.func.isRequired
 }
 
 export default CancelButton
