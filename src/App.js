@@ -9,7 +9,7 @@ function App () {
   const [timerSeconds, setTimerSeconds] = useState('00')
   const [timerMode, setTimerMode] = useState('Session')
   const [color, setColor] = useState('white')
-  const [status, setStatus] = useState('initialised')
+  const [status, setStatus] = useState('paused')
   const [icon, setIcon] = useState('fas fa-play fa-3x')
   const [totalSeconds, setTotalSeconds] = useState(1500)
 
@@ -26,7 +26,6 @@ function App () {
   }
 
   const toggleTimerMode = () => {
-    console.log('Hello World!')
     setColor('white')
     if (timerMode === 'Session') { // Check timer mode and toggle states
       setTimerMode('Break')
@@ -82,6 +81,7 @@ function App () {
     setTimerMode('Session')
     setTotalSeconds(1500)
     setStatus('initialised')
+    setIcon('fas fa-play fa-3x')
   }
 
   // Functional component for setting the break or session length
