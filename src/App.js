@@ -5,13 +5,12 @@ function App () {
   // Declare and set initial states of app
   const [breakLength, setBreakLength] = useState(5)
   const [sessionLength, setSessionLength] = useState(25)
-  const [timerMinutes, setTimerMinutes] = useState(25)
+  const [timerMinutes, setTimerMinutes] = useState('25')
   const [timerSeconds, setTimerSeconds] = useState('00')
   const [timerMode, setTimerMode] = useState('Session')
   const [color, setColor] = useState('white')
   const [status, setStatus] = useState('initialised')
   const [icon, setIcon] = useState('fas fa-play fa-3x')
-  // eslint-disable-next-line no-unused-vars
   const [totalSeconds, setTotalSeconds] = useState(1500)
 
   // Declare function for changing status and play/pause button icon when pressed
@@ -25,6 +24,42 @@ function App () {
       setIcon('fas fa-play fa-3x') // change icon to 'play'
     }
   }
+
+  const toggleTimerMode = () => {
+    console.log('Hello World!')
+    setColor('white')
+    if (timerMode === 'Session') { // Check timer mode and toggle states
+      setTimerMode('Break')
+      setTotalSeconds(breakLength * 60)
+    } else {
+      setTimerMode('Session')
+      setTotalSeconds(sessionLength * 60)
+    }
+  }
+
+  // useEffect hook for changing timer values and activating mode toggle, if necessary
+  useEffect(() => {
+    if (totalSeconds === -1) { // if timer has reached zero trigger the function to toggle timer mode
+      toggleTimerMode()
+    } else if (totalSeconds < 60) { // change color if only one minute remains
+      setColor('red')
+    } else {
+      setColor('white')
+    }
+    // calculate minutes and seconds from total seconds remaining
+    let minutes = (Math.floor(totalSeconds / 60)).toString()
+    let seconds = (totalSeconds % 60).toString()
+    // convert single digits into double digit strings
+    if (seconds.length === 1) {
+      seconds = '0' + seconds
+    }
+    if (minutes.length === 1) {
+      minutes = '0' + minutes
+    }
+    // pass variables into state
+    setTimerMinutes(minutes)
+    setTimerSeconds(seconds)
+  }, [totalSeconds])
 
   // useEffect hook for reducing totalSeconds by one, every second, upon change of status
   useEffect(() => {
@@ -41,7 +76,7 @@ function App () {
   const cancel = () => {
     setBreakLength(5)
     setSessionLength(25)
-    setTimerMinutes(25)
+    setTimerMinutes('25')
     setTimerSeconds('00')
     setColor('white')
     setTimerMode('Session')
@@ -57,11 +92,17 @@ function App () {
       if (status !== 'running') {
         // if the down arrow is pressed:
         if (e.target.id.search('increment') === -1) {
-          if (name === 'session' && length > 1) setTimerMinutes(length - 1) // if session is pressed reduce session length AND timer minutes
+          if (name === 'session' && length > 1) {
+            setTimerMinutes((length - 1).toString()) // if session is pressed reduce session length AND timer minutes
+            setTotalSeconds((length - 1) * 60)
+          }
           if (length > 1) setLength(length - 1) // only allow numbers to reduce to one
           // otherwise:
         } else {
-          if (name === 'session' && length < 60) setTimerMinutes(length + 1) // if session is pressed increase session length AND timer minutes
+          if (name === 'session' && length < 60) {
+            setTimerMinutes((length + 1).toString()) // if session is pressed increase session length AND timer minutes
+            setTotalSeconds((length + 1) * 60)
+          }
           if (length < 60) setLength(length + 1) // only allow numbers to increase to sixty
         }
       }
