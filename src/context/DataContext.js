@@ -73,7 +73,6 @@ export const DataProvider = ({ children }) => {
         if (event.target.id.search('break') === -1) {
           if (sessionLength > 1) {
             setSessionLength(sessionLength => sessionLength - 1)
-            setTimerMinutes((sessionLength - 1).toString())
             setTotalSeconds((sessionLength - 1) * 60)
           }
         } else {
@@ -83,10 +82,8 @@ export const DataProvider = ({ children }) => {
         if (event.target.id.search('break') === -1) {
           if (sessionLength < 60) {
             setSessionLength(sessionLength => sessionLength + 1)
-            setTimerMinutes((sessionLength + 1).toString())
             setTotalSeconds((sessionLength + 1) * 60)
           }
-          console.log('Session up arrow')
         } else {
           if (breakLength < 60) setBreakLength(breakLength => breakLength + 1)
         }
