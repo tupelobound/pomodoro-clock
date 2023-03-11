@@ -3,27 +3,7 @@ import { DataContext } from './context/DataContext'
 
 // Functional component for setting the session length
 const SessionSetter = () => {
-  const { status, setSessionLength, sessionLength, setTimerMinutes, setTotalSeconds } = useContext(DataContext)
-  // Declare function for handling clicks of the up/down arrows
-  const handleClick = (e) => {
-    // check status, only execute if the app isn't running
-    if (status !== 'running') {
-      // if the down arrow is pressed:
-      if (e.target.id.search('increment') === -1) {
-        if (sessionLength > 1) {
-          setSessionLength(sessionLength => sessionLength - 1)
-          setTimerMinutes((sessionLength - 1).toString()) // if session is pressed reduce session length AND timer minutes
-          setTotalSeconds((sessionLength - 1) * 60)
-        }
-      } else {
-        if (sessionLength < 60) {
-          setSessionLength(sessionLength => sessionLength + 1) // only allow numbers to increase to sixty
-          setTimerMinutes((sessionLength + 1).toString()) // if session is pressed reduce session length AND timer minutes
-          setTotalSeconds((sessionLength + 1) * 60)
-        }
-      }
-    }
-  }
+  const { sessionLength, handleClick } = useContext(DataContext)
 
   // return JSX components
   return (

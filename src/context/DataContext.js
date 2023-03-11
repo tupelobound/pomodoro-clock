@@ -64,6 +64,36 @@ export const DataProvider = ({ children }) => {
     }
   }
 
+  const handleClick = (event) => {
+    // check status, only execute if the app isn't running
+    if (status !== 'running') {
+      // if the down arrow is pressed:
+      if (event.target.id.search('increment') === -1) {
+        // if session button
+        if (event.target.id.search('break') === -1) {
+          if (sessionLength > 1) {
+            setSessionLength(sessionLength => sessionLength - 1)
+            setTimerMinutes((sessionLength - 1).toString())
+            setTotalSeconds((sessionLength - 1) * 60)
+          }
+        } else {
+          if (breakLength > 1) setBreakLength(breakLength => breakLength - 1)
+        }
+      } else {
+        if (event.target.id.search('break') === -1) {
+          if (sessionLength < 60) {
+            setSessionLength(sessionLength => sessionLength + 1)
+            setTimerMinutes((sessionLength + 1).toString())
+            setTotalSeconds((sessionLength + 1) * 60)
+          }
+          console.log('Session up arrow')
+        } else {
+          if (breakLength < 60) setBreakLength(breakLength => breakLength + 1)
+        }
+      }
+    }
+  }
+
   return (
         <DataContext.Provider value={{
           breakLength,
@@ -83,7 +113,8 @@ export const DataProvider = ({ children }) => {
           icon,
           setIcon,
           totalSeconds,
-          setTotalSeconds
+          setTotalSeconds,
+          handleClick
         }}>
         {children}
         </DataContext.Provider>

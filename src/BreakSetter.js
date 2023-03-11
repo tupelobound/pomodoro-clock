@@ -3,19 +3,7 @@ import { DataContext } from './context/DataContext'
 
 // Functional component for setting the break length
 const BreakSetter = () => {
-  const { status, setBreakLength, breakLength } = useContext(DataContext)
-  // Declare function for handling clicks of the up/down arrows
-  const handleClick = (e) => {
-    // check status, only execute if the app isn't running
-    if (status !== 'running') {
-      // if the down arrow is pressed:
-      if (e.target.id.search('increment') === -1) {
-        if (breakLength > 1) setBreakLength(breakLength => breakLength - 1)
-      } else {
-        if (breakLength < 60) setBreakLength(breakLength => breakLength + 1) // only allow numbers to increase to sixty
-      }
-    }
-  }
+  const { breakLength, handleClick } = useContext(DataContext)
 
   // return JSX components
   return (
