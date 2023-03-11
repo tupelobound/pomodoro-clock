@@ -43,7 +43,7 @@ i {
   justify-items: center;
   align-items: center;
 }
-  
+
 .length-adjust p {
   margin: 10px 0;
   font-size: 30px;
@@ -59,7 +59,7 @@ i {
   text-align: center;
 }
   
- #timer i {
+#timer i {
   margin: 15px;
 }
   
@@ -106,13 +106,12 @@ i {
   #session-increment {
     font-size: 22px;
   }
-
 }
 
 @media screen and (max-width: 520px) {
   #main {
-    width:375px;
-    height:650px;
+    width: 375px;
+    height: 650px;
   }
 
   .length-adjust {
