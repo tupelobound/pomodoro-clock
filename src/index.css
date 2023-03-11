@@ -58,16 +58,16 @@ i {
   width: 100%;
   text-align: center;
 }
-  
+
 #timer i {
   margin: 15px;
 }
-  
+
 #timer-label {
   font-size: 50px;
   margin: 0;
 }
-  
+
 #time-left {
   font-family: 'Share Tech Mono', cursive;
   font-size: 90px;
