@@ -50,18 +50,6 @@ export const DataProvider = ({ children }) => {
     }
   }, [status])
 
-  // Declare function for changing status and play/pause button icon when pressed
-  const playPause = (e) => {
-    // Check status of app, if not 'running':
-    if (status !== 'running') {
-      setStatus('running') // set status to 'running'
-      setIcon('fas fa-pause fa-3x') // change icon to 'pause'
-    } else {
-      setStatus('paused') // set status to 'paused'
-      setIcon('fas fa-play fa-3x') // change icon to 'play'
-    }
-  }
-
   const toggleTimerMode = () => {
     setColor('white')
     if (timerMode === 'Session') { // Check timer mode and toggle states
@@ -71,19 +59,6 @@ export const DataProvider = ({ children }) => {
       setTimerMode('Session')
       setTotalSeconds(sessionLength * 60)
     }
-  }
-
-  // Declare function for returning state to initial values
-  const cancel = () => {
-    setBreakLength(5)
-    setSessionLength(25)
-    setTimerMinutes('25')
-    setTimerSeconds('00')
-    setColor('white')
-    setTimerMode('Session')
-    setTotalSeconds(1500)
-    setStatus('initialised')
-    setIcon('fas fa-play fa-3x')
   }
 
   return (
@@ -105,9 +80,7 @@ export const DataProvider = ({ children }) => {
           icon,
           setIcon,
           totalSeconds,
-          setTotalSeconds,
-          cancel,
-          playPause
+          setTotalSeconds
         }}>
         {children}
         </DataContext.Provider>
