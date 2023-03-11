@@ -1,6 +1,6 @@
 # pomodoro-clock
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/f01da7df3bfe4f99aab37060e1468a96)](https://www.codacy.com/gh/tupelobound/pomodoro-clock/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tupelobound/pomodoro-clock&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/90ab92e13d5c4f669eabaf58adc27673)](https://www.codacy.com/gh/tupelobound/pomodoro-clock/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tupelobound/pomodoro-clock&amp;utm_campaign=Badge_Grade)
 
 freeCodeCamp Front End Development Libraries project - Build a Pomodoro Clock
 
