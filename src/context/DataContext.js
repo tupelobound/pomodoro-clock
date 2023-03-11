@@ -51,6 +51,9 @@ export const DataProvider = ({ children }) => {
   }, [status])
 
   const toggleTimerMode = () => {
+    // set off alarm
+    document.getElementById('beep').play()
+    // change color back to white
     setColor('white')
     if (timerMode === 'Session') { // Check timer mode and toggle states
       setTimerMode('Break')

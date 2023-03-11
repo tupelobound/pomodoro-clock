@@ -7,6 +7,8 @@ const PlayButton = () => {
 
   // Declare function for changing status and play/pause button icon when pressed
   const playPause = (e) => {
+    document.getElementById('beep').play()
+    document.getElementById('beep').pause()
     // Check status of app, if not 'running':
     if (status !== 'running') {
       setStatus('running') // set status to 'running'

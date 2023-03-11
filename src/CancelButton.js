@@ -17,6 +17,8 @@ const CancelButton = () => {
 
   // Declare function for returning state to initial values
   const cancel = () => {
+    document.getElementById('beep').pause() // Stop alarm
+    document.getElementById('beep').currentTime = 0 // Reset alarm
     setBreakLength(5)
     setSessionLength(25)
     setTimerMinutes('25')
