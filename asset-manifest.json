@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/tupelobound.github.io/pomodoro-clock/static/css/main.a406a810.css",
+    "main.js": "/tupelobound.github.io/pomodoro-clock/static/js/main.e34ac608.js",
+    "index.html": "/tupelobound.github.io/pomodoro-clock/index.html",
+    "main.a406a810.css.map": "/tupelobound.github.io/pomodoro-clock/static/css/main.a406a810.css.map",
+    "main.e34ac608.js.map": "/tupelobound.github.io/pomodoro-clock/static/js/main.e34ac608.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a406a810.css",
+    "static/js/main.e34ac608.js"
+  ]
+}
