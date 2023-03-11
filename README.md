@@ -1,4 +1,7 @@
 # pomodoro-clock
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/f01da7df3bfe4f99aab37060e1468a96)](https://www.codacy.com/gh/tupelobound/pomodoro-clock/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tupelobound/pomodoro-clock&amp;utm_campaign=Badge_Grade)
+
 freeCodeCamp Front End Development Libraries project - Build a Pomodoro Clock
 
 This project was completed as part of freeCodeCamp's Front End Development Libraries certificate, focused on learning frond end libraries such as React.
@@ -34,6 +37,7 @@ The project brief was to fulfill the following user stories:
 27. The audio element with id="beep" must be 1 second or longer.
 28. The audio element with id of beep must stop playing and be rewound to the beginning when the element with the id of reset is clicked.
 
-Originally built on Codepen with a starter template, migrating it to Github was a great opportunity to learn a bit more about updates to React, and processing JSX using Babel. This version uses a class component to wrap the main app. I'm currently working on a new version using functional components and hooks only.
-
 Recently updated with media queries for smaller screens and a fix to enable audio alarm on mobile.
+
+Originally built on Codepen with a starter template, migrating it to Github was a great opportunity to learn a bit more about updates to React, and processing JSX using Babel. Version 1 used a class component to wrap the main app. This version was refactored to use functional components and hooks only.
+
