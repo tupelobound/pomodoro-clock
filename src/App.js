@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
 import Timer from './Timer'
-import CancelButton from './CancelButton'
-import PlayButton from './PlayButton'
 import BreakSetter from './BreakSetter'
 import SessionSetter from './SessionSetter'
 import { React } from 'react'
@@ -16,8 +14,6 @@ function App () {
         <BreakSetter />
         <SessionSetter />
         <Timer />
-        <PlayButton />
-        <CancelButton />
       </div>
       <audio id="beep" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav" />
     </DataProvider>
