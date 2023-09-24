@@ -12,13 +12,13 @@ Originally built on Codepen with a starter template, migrating it to Github was 
 
 ## Table of Contents
 
-- [Demo](#demo)
-- [Features](#features)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
+-   [Demo](#demo)
+-   [Features](#features)
+-   [Getting Started](#getting-started)
+  -   [Prerequisites](#prerequisites)
+  -   [Installation](#installation)
+-   [Usage](#usage)
+-   [License](#license)
 
 ## Demo
 
@@ -26,10 +26,10 @@ You can try out the Pomodoro Clock live here: [Demo Link](https://tupelobound.gi
 
 ## Features
 
-- Set custom work and break durations.
-- Start, pause, and reset the timer.
-- Visual and audio notifications.
-- Mobile-responsive design.
+-   Set custom work and break durations.
+-   Start, pause, and reset the timer.
+-   Visual and audio notifications.
+-   Mobile-responsive design.
 
 ## Getting Started
 
@@ -37,31 +37,31 @@ You can try out the Pomodoro Clock live here: [Demo Link](https://tupelobound.gi
 
 Before you begin, ensure you have met the following requirements:
 
-- [Node.js](https://nodejs.org/) installed on your computer.
-- A code editor like [Visual Studio Code](https://code.visualstudio.com/) or your preferred choice.
+-   [Node.js](https://nodejs.org/) installed on your computer.
+-   A code editor like [Visual Studio Code](https://code.visualstudio.com/) or your preferred choice.
 
 ### Installation
 
 To install and run the Pomodoro Clock locally, follow these steps:
 
-1. Clone this repository:
+1.  Clone this repository:
 ```bash
 git clone https://github.com/tupelobound/pomodoro-clock.git
 ```
 
-2. Navigate to the project directory:
+2.  Navigate to the project directory:
 
 ```bash
 cd pomodoro-clock
 ```
 
-3. Install the project dependencies:
+3.  Install the project dependencies:
 
 ```bash
 npm install
 ```
 
-4. Start the development server:
+4.  Start the development server:
 
 ```bash
 npm start
