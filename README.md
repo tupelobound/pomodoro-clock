@@ -15,8 +15,8 @@ Originally built on Codepen with a starter template, migrating it to Github was 
 -   [Demo](#demo)
 -   [Features](#features)
 -   [Getting Started](#getting-started)
-  -   [Prerequisites](#prerequisites)
-  -   [Installation](#installation)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
 -   [Usage](#usage)
 -   [License](#license)
 
