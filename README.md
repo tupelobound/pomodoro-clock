@@ -46,7 +46,7 @@ To install and run the Pomodoro Clock locally, follow these steps:
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/pomodoro-clock.git
+git clone https://github.com/tupelobound/pomodoro-clock.git
 ```
 
 2. Navigate to the project directory:
