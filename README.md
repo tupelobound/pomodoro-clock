@@ -1,43 +1,90 @@
 # pomodoro-clock
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/90ab92e13d5c4f669eabaf58adc27673)](https://www.codacy.com/gh/tupelobound/pomodoro-clock/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tupelobound/pomodoro-clock&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/90ab92e13d5c4f669eabaf58adc27673)](https://app.codacy.com/gh/tupelobound/pomodoro-clock/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
-freeCodeCamp Front End Development Libraries project - Build a Pomodoro Clock
+## freeCodeCamp Front End Development Libraries project - Build a Pomodoro Clock
+
+A simple Pomodoro Clock web application built with HTML, JavaScript, and React.
 
 This project was completed as part of freeCodeCamp's Front End Development Libraries certificate, focused on learning frond end libraries such as React.
 
-The project brief was to fulfill the following user stories:
-
-1.  I can see an element with id="break-label" that contains a string (e.g. "Break Length").
-2.  I can see an element with id="session-label" that contains a string (e.g. "Session Length").
-3.  I can see two clickable elements with corresponding IDs: id="break-decrement" and id="session-decrement".
-4.  I can see two clickable elements with corresponding IDs: id="break-increment" and id="session-increment".
-5.  I can see an element with a corresponding id="break-length", which by default (on load) displays a value of 5.
-6.  I can see an element with a corresponding id="session-length", which by default displays a value of 25.
-7.  I can see an element with a corresponding id="timer-label", that contains a string indicating a session is initialized (e.g. "Session").
-8.  I can see an element with corresponding id="time-left". NOTE: Paused or running, the value in this field should always be displayed in mm:ss format (i.e. 25:00).
-9.  I can see a clickable element with a corresponding id="start_stop".
-10. I can see a clickable element with a corresponding id="reset".
-11. When I click the element with the id of reset, any running timer should be stopped, the value within id="break-length" should return to 5, the value within id="session-length" should return to 25, and the element with id="time-left" should reset to its default state.
-12. When I click the element with the id of break-decrement, the value within id="break-length" decrements by a value of 1, and I can see the updated value.
-13. When I click the element with the id of break-increment, the value within id="break-length" increments by a value of 1, and I can see the updated value.
-14. When I click the element with the id of session-decrement, the value within id="session-length" decrements by a value of 1, and I can see the updated value.
-15. When I click the element with the id of session-increment, the value within id="session-length" increments by a value of 1, and I can see the updated value.
-16. I should not be able to set a session or break length to <= 0.
-17. I should not be able to set a session or break length to > 60.
-18. When I first click the element with id="start_stop", the timer should begin running from the value currently displayed in id="session-length", even if the value has been incremented or decremented from the original value of 25.
-19. If the timer is running, the element with the id of time-left should display the remaining time in mm:ss format (decrementing by a value of 1 and updating the display every 1000ms).
-20. If the timer is running and I click the element with id="start_stop", the countdown should pause.
-21. If the timer is paused and I click the element with id="start_stop", the countdown should resume running from the point at which it was paused.
-22. When a session countdown reaches zero (NOTE: timer MUST reach 00:00), and a new countdown begins, the element with the id of timer-label should display a string indicating a break has begun.
-23. When a session countdown reaches zero (NOTE: timer MUST reach 00:00), a new break countdown should begin, counting down from the value currently displayed in the id="break-length" element.
-24. When a break countdown reaches zero (NOTE: timer MUST reach 00:00), and a new countdown begins, the element with the id of timer-label should display a string indicating a session has begun.
-25. When a break countdown reaches zero (NOTE: timer MUST reach 00:00), a new session countdown should begin, counting down from the value currently displayed in the id="session-length" element.
-26. When a countdown reaches zero (NOTE: timer MUST reach 00:00), a sound indicating that time is up should play. This should utilize an HTML5 audio tag and have a corresponding id="beep".
-27. The audio element with id="beep" must be 1 second or longer.
-28. The audio element with id of beep must stop playing and be rewound to the beginning when the element with the id of reset is clicked.
-
-Recently updated with media queries for smaller screens and a fix to enable audio alarm on mobile.
-
 Originally built on Codepen with a starter template, migrating it to Github was a great opportunity to learn a bit more about updates to React, and processing JSX using Babel. Version 1 used a class component to wrap the main app. This version was refactored to use functional components and hooks only.
 
+## Table of Contents
+
+- [Demo](#demo)
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+
+## Demo
+
+You can try out the Pomodoro Clock live here: [Demo Link](https://tupelobound.github.io/pomodoro-clock/)
+
+## Features
+
+- Set custom work and break durations.
+- Start, pause, and reset the timer.
+- Visual and audio notifications.
+- Mobile-responsive design.
+
+## Getting Started
+
+### Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- [Node.js](https://nodejs.org/) installed on your computer.
+- A code editor like [Visual Studio Code](https://code.visualstudio.com/) or your preferred choice.
+
+### Installation
+
+To install and run the Pomodoro Clock locally, follow these steps:
+
+1. Clone this repository:
+```bash
+git clone https://github.com/yourusername/pomodoro-clock.git
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd pomodoro-clock
+```
+
+3. Install the project dependencies:
+
+```bash
+npm install
+```
+
+4. Start the development server:
+
+```bash
+npm start
+```
+
+The Pomodoro Clock should now be running locally at http://localhost:3000.
+
+## Usage
+
+Access the Pomodoro Clock through your browser.
+
+Set your desired work and break durations using the input fields.
+
+Click the "Play" button to begin the timer.
+
+During a work session, the timer will count down from the work duration, and you will receive a notification when it's time for a break.
+
+During a break session, the timer will count down from the break duration, and you will receive a notification when it's time to work again.
+
+You can pause and reset the timer as needed.
+
+Enjoy improved productivity with the Pomodoro technique!
+
+## License
+
+This project is licensed under the MIT License.
