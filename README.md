@@ -12,13 +12,13 @@ Originally built on Codepen with a starter template, migrating it to Github was 
 
 ## Table of Contents
 
--   [Demo](#demo)
--   [Features](#features)
--   [Getting Started](#getting-started)
+- [Demo](#demo)
+- [Features](#features)
+- [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
--   [Usage](#usage)
--   [License](#license)
+- [Usage](#usage)
+- [License](#license)
 
 ## Demo
 
